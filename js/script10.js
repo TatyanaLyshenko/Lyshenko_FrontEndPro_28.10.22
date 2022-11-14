@@ -1,25 +1,28 @@
 
 // 1. Вивести на сторінку в один рядок через кому числа від 10 до 20.
 
-let str1 = '';
-
-for (i=10; i<=20; i++) {
+let str1 = '';            //перший варіант через string
+for (let i=10; i<=20; i++) {
     str1 += i + ',';
 }
-
 console.log(str1);
 
+let arr1 = [];      //другий варіант через масив
+for (let i=10; i<=20; i++) {
+    arr1.push(i);
+}
+console.log(arr1.join(', '));
 
 
 // 2. Вивести квадрати чисел від 10 до 20.
 
-for (i=10; i<=20; i++) {
+for (let i=10; i<=20; i++) {
     console.log(i*i)
 }
 
 // 3. Вивести таблицю множення на 7.
 
-for (i=1; i<=10; i++) {
+for (let i=1; i<=10; i++) {
     console.log(i*7)
 }
 
@@ -28,7 +31,7 @@ for (i=1; i<=10; i++) {
 
 let sum = 0;
 
-for (i=1; i<=15; i++) {
+for (let i=1; i<=15; i++) {
     sum+=i
 }
 
@@ -38,7 +41,7 @@ console.log(sum)
 
 let mult = 1;
 
-for (i=15; i<=35; i++) {
+for (let i=15; i<=35; i++) {
     mult = mult*i
 }
 
@@ -46,15 +49,26 @@ console.log(mult)
 
 // 6. Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
 
-let arr = new Array(500);
+let arr = new Array(500);         //на лекції обговори, що рішення через масив - невірне.
 let sum6 = 0;
 
-for (i=1; i<=arr.length; i++) {
+for (let i=1; i<=arr.length; i++) {
     sum6+=i   
 }
 
-result = sum6 / arr.length
-console.log(result)
+const result = sum6 / arr.length;
+console.log(result);
+
+
+const rightBorder = 500;              //рішення задачі через змінну
+let counter = 0;
+
+for (let i=1; i<=rightBorder; i++) {
+    counter+=i   
+}
+
+const result6 = counter / rightBorder;
+console.log(result6);
 
 
 
@@ -62,7 +76,7 @@ console.log(result)
 
 let sum7 = 0;
 
-for (i=30; i<=80; i+=2) {
+for (let i=30; i<=80; i+=2) {
     sum7+=i
 }
 
@@ -70,7 +84,7 @@ console.log(sum7)
 
 // 8. Вивести всі числа в діапазоні від 100 до 200 кратні 3.
 
-for (i=100; i<=200; i++) {
+for (let i=100; i<=200; i++) {
     if (i % 3 === 0) {
         console.log(i)
     }   
@@ -84,7 +98,7 @@ const naturalNumber = prompt('Enter natural number, please');
 const number = Number(naturalNumber);
  
 
-for (div=1; div<=number; div++) {          
+for (let div=1; div<=number; div++) {          
     if ( number % div === 0){
    console.log(div)  
     }    
@@ -97,7 +111,7 @@ const number2 = Number(naturalNumber2);
 
 let result10 = 0;
 
-for (div=1; div<=number2; div++) {          
+for (let div=1; div<=number2; div++) {          
     if ( number2 % div === 0  && div % 2 === 0){
         result10 += 1
     }      
@@ -113,7 +127,7 @@ const naturalNumber3 = Number(prompt('Enter natural number, please'));
 let result11 = 0;
 
 
-for (div=1; div<=naturalNumber3; div++) { 
+for (let div=1; div<=naturalNumber3; div++) { 
     if (naturalNumber3 % div === 0 && div % 2 === 0) {
         result11 += div;      
     }
